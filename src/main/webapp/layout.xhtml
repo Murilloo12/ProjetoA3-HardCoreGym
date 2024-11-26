@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:jsf="http://xmlns.jcp.org/jsf"
+      lang="pt-br">
+
+<head jsf:id="head">
+    <link rel="shortcut icon" href="images/Favicon-HardCoreGym.png" type="image/x-icon" />
+    <meta charset="ISO-8859-1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>HardCoreGym</title>
+    <link rel="stylesheet" href="css/hardcoregym_estilo.css"/>
+</head>
+
+<body>
+    <header>
+        <img id="imgLogo" src="images/HardCoreGym-Logo.png" />
+        <nav>
+            <div>
+                <a jsf:outcome="dadosAluno">Novo aluno</a><br />
+                <a jsf:outcome="pesquisaDeAluno?clear=true">Pesquisa de aluno</a><br />
+                <a jsf:outcome="controleDeAcesso">Controle de acesso</a><br />
+                <a jsf:outcome="relatoriosDeEntradaSaida">Relatorios de Entradas e Saidas</a><br />
+                <a jsf:outcome="relatoriosDeSituacoes?clear=true">Relatorios de Situacoes</a><br />
+            </div>
+        </nav>
+    </header>
+    
+    <h1>#{tile}</h1>
+
+		<h:panelGroup rendered="#{!facesContext.messageList.isEmpty()}">
+			<div id="infoMessage">
+				<h:messages />
+			</div>
+		</h:panelGroup>
+
+		<br />
+
+   <ui:insert name="conteudo"/>
+
+</body>
+
+</html>
